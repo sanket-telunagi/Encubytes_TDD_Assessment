@@ -69,8 +69,28 @@ class Spacecraft {
 
     // return direction 
     public String getDirection() {
-        return direction.toLowerCase();
+        return direction;
     }
+
+    // getting individual coordinate  
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public int getZ() {
+        return z;
+    }
+
+    // complete coordinates with direction 
+    public String getCoordinates() {
+        String coordinates = "(" + getX() + ", " + getY() + ", " + getZ() + ") " + getDirection() ;
+        return coordinates ;
+    }
+
 }
 
 
@@ -78,7 +98,7 @@ public class EncubytesTDDAssessment
 {
     public static void main( String[] args )
     {
-        // System.out.println( "Hello World!" );
+        // creating spacecraft object and initialising 
         Spacecraft spacecraft = new Spacecraft() ;
     }
 }
