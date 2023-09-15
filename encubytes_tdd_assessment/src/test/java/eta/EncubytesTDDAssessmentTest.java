@@ -16,17 +16,16 @@ public class EncubytesTDDAssessmentTest
      */
     // initialisation test scenario 
     @Test
-    public void testExecuteCommands() {
+    public void testInitializeSpacecraft() {
         Spacecraft spacecraft = new Spacecraft();
-        spacecraft.executeCommands(new String[]{"f", "r", "u", "b", "l"});
         assertEquals(0, spacecraft.getX());
         assertEquals(0, spacecraft.getY());
         assertEquals(0, spacecraft.getZ());
         assertEquals("N", spacecraft.getDirection());
-        
         String actualCoordinates = "(0, 0, 0) N" ;
         String result = spacecraft.getCoordinates() ;
         assertEquals(actualCoordinates, result) ;
+
     }
     // testing move forward function 
     @Test
@@ -43,5 +42,21 @@ public class EncubytesTDDAssessmentTest
         spacecraft.executeCommand("b");
         assertEquals(0, spacecraft.getX());
         assertEquals(-1, spacecraft.getY());
+    }
+
+    // testing left turn 
+    @Test
+    public void testTurnLeft() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("l");
+        assertEquals("W", spacecraft.getDirection());
+    }
+
+    // testing right turn 
+    @Test
+    public void testTurnRight() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("r");
+        assertEquals("E", spacecraft.getDirection());
     }
 }

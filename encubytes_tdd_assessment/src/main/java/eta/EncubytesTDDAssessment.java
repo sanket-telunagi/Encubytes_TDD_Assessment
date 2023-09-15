@@ -33,7 +33,7 @@ class Spacecraft {
             moveBackward();
         } else if ("l".equals(command)) {
             turnLeft();
-        }
+        } 
     }
 
 
@@ -69,7 +69,7 @@ class Spacecraft {
             z++;
         }
     }
-
+    // left turn 
     private void turnLeft() {
         if ("N".equals(direction)) {
             direction = "W";
@@ -82,6 +82,18 @@ class Spacecraft {
         }
     }
 
+    // right turn 
+    public void turnRight() {
+        if ("N".equals(direction)) {
+            direction = "E";
+        } else if ("S".equals(direction)) {
+            direction = "W";
+        } else if ("E".equals(direction)) {
+            direction = "S";
+        } else if ("W".equals(direction)) {
+            direction = "N";
+        }
+    }
 
     // executing commands 
     public void executeCommands(String[] commands) {
