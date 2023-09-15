@@ -60,7 +60,7 @@ class Spacecraft {
             z--;
         }
     }
-
+    // backward motion
     private void moveBackward() {
         if ("N".equals(direction)) {
             y--;
@@ -110,15 +110,15 @@ class Spacecraft {
         }
     }
 
-    // uptilt 
+    // up tilt 
     private void tiltUp() {
-        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction)) {
+        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction) || "Down".equals(direction)) {
             direction = "Up";
         }
     }
-
+    // down tilt 
     private void tiltDown() {
-        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction)) {
+        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction) || "Up".equals(direction)) {
             direction = "Down";
         }
     }
@@ -164,7 +164,5 @@ public class EncubytesTDDAssessment
     {
         // creating spacecraft object and initialising 
         Spacecraft spacecraft = new Spacecraft() ;
-
-        
     }
 }

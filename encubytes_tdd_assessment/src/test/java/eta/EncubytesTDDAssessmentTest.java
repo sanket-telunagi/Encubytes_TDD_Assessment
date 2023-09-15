@@ -87,7 +87,7 @@ public class EncubytesTDDAssessmentTest
         assertEquals(-1, spacecraft.getZ());
         assertEquals("N", spacecraft.getDirection());
     }
-
+    // tesing out of bounds commands 
     @Test
     public void testOutOfBounds() {
         Spacecraft spacecraft = new Spacecraft();
@@ -101,7 +101,7 @@ public class EncubytesTDDAssessmentTest
         assertEquals(-1, spacecraft.getY());
         System.out.println(spacecraft.getCoordinates());
     }
-
+    // tesing invalid commands
     @Test
     public void testInvalidCommands() {
         Spacecraft spacecraft = new Spacecraft();
@@ -110,5 +110,15 @@ public class EncubytesTDDAssessmentTest
         assertEquals(0, spacecraft.getY());
         assertEquals(0, spacecraft.getZ());
         assertEquals("N", spacecraft.getDirection());
+    }
+    // tesing multiple commands 
+    @Test
+    public void testMultipleCommands() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommands(new String[]{"f", "r", "b", "l", "u", "d"});
+        assertEquals(-1, spacecraft.getX());
+        assertEquals(1, spacecraft.getY());
+        assertEquals(0, spacecraft.getZ());
+        assertEquals("Down", spacecraft.getDirection());
     }
 }
