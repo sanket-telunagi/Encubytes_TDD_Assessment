@@ -33,7 +33,13 @@ class Spacecraft {
             moveBackward();
         } else if ("l".equals(command)) {
             turnLeft();
-        } 
+        } else if ("r".equals(command)) {
+            turnRight();
+        } else if ("u".equals(command)) {
+            tiltUp();
+        } else if ("d".equals(command)) {
+            tiltDown();
+        }
     }
 
 
@@ -83,7 +89,7 @@ class Spacecraft {
     }
 
     // right turn 
-    public void turnRight() {
+    private void turnRight() {
         if ("N".equals(direction)) {
             direction = "E";
         } else if ("S".equals(direction)) {
@@ -92,6 +98,19 @@ class Spacecraft {
             direction = "S";
         } else if ("W".equals(direction)) {
             direction = "N";
+        }
+    }
+
+    // uptilt 
+    private void tiltUp() {
+        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction)) {
+            direction = "Up";
+        }
+    }
+
+    private void tiltDown() {
+        if ("N".equals(direction) || "S".equals(direction) || "E".equals(direction) || "W".equals(direction)) {
+            direction = "Down";
         }
     }
 

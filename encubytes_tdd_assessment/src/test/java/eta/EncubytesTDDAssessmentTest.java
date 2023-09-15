@@ -59,4 +59,22 @@ public class EncubytesTDDAssessmentTest
         spacecraft.executeCommand("r");
         assertEquals("E", spacecraft.getDirection());
     }
+
+    // testing up tilt 
+    @Test
+    public void testTiltUp() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("u");
+        assertEquals("Up", spacecraft.getDirection());
+    }
+
+    // tesing down tilt 
+    @Test
+    public void testTiltDown() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("d");
+        assertEquals("Down", spacecraft.getDirection());
+    }
+
+    
 }
