@@ -76,5 +76,29 @@ public class EncubytesTDDAssessmentTest
         assertEquals("Down", spacecraft.getDirection());
     }
 
-    
+    // executing all the commands 
+    @Test
+    public void testExecuteCommands() {
+        Spacecraft spacecraft = new Spacecraft();
+        String args [] = new String[]{"f", "r", "u", "b", "l"} ;
+        spacecraft.executeCommands(args);
+        assertEquals(0, spacecraft.getX());
+        assertEquals(1, spacecraft.getY());
+        assertEquals(-1, spacecraft.getZ());
+        assertEquals("N", spacecraft.getDirection());
+    }
+
+    @Test
+    public void testOutOfBounds() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("b");
+        assertEquals(0, spacecraft.getX());
+        assertEquals(-1, spacecraft.getY());
+        spacecraft.executeCommand("l");
+        assertEquals("W", spacecraft.getDirection());
+        spacecraft.executeCommand("f");
+        assertEquals(-1, spacecraft.getX());
+        assertEquals(-1, spacecraft.getY());
+        System.out.println(spacecraft.getCoordinates());
+    }
 }

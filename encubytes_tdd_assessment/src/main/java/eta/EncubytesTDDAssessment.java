@@ -40,6 +40,7 @@ class Spacecraft {
         } else if ("d".equals(command)) {
             tiltDown();
         }
+        System.out.println(command + " " + getCoordinates());
     }
 
 
@@ -85,6 +86,10 @@ class Spacecraft {
             direction = "N";
         } else if ("W".equals(direction)) {
             direction = "S";
+        } else if ("Up".equals(direction)) {
+            direction = "N" ;
+        } else if ("Down".equals(direction)) {
+            direction = "S" ;
         }
     }
 
@@ -98,6 +103,10 @@ class Spacecraft {
             direction = "S";
         } else if ("W".equals(direction)) {
             direction = "N";
+        } else if ("Up".equals(direction)) {
+            direction = "S" ;
+        } else if ("Down".equals(direction)) {
+            direction = "N" ;
         }
     }
 
@@ -155,5 +164,7 @@ public class EncubytesTDDAssessment
     {
         // creating spacecraft object and initialising 
         Spacecraft spacecraft = new Spacecraft() ;
+
+        
     }
 }
