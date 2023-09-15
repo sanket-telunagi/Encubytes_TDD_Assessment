@@ -2,6 +2,8 @@ package eta;
 
 import static org.junit.Assert.assertEquals;
 
+import java.beans.Transient;
+
 import org.junit.Test;
 
 /**
@@ -25,5 +27,21 @@ public class EncubytesTDDAssessmentTest
         String actualCoordinates = "(0, 0, 0) N" ;
         String result = spacecraft.getCoordinates() ;
         assertEquals(actualCoordinates, result) ;
+    }
+    // testing move forward function 
+    @Test
+    public void testMoveForward() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("f");
+        assertEquals(0, spacecraft.getX());
+        assertEquals(1, spacecraft.getY());
+    }
+    // tesing move backward function 
+    @Test
+    public void testMoveBackward() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("b");
+        assertEquals(0, spacecraft.getX());
+        assertEquals(-1, spacecraft.getY());
     }
 }
