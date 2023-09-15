@@ -101,4 +101,14 @@ public class EncubytesTDDAssessmentTest
         assertEquals(-1, spacecraft.getY());
         System.out.println(spacecraft.getCoordinates());
     }
+
+    @Test
+    public void testInvalidCommands() {
+        Spacecraft spacecraft = new Spacecraft();
+        spacecraft.executeCommand("x"); // Invalid command
+        assertEquals(0, spacecraft.getX());
+        assertEquals(0, spacecraft.getY());
+        assertEquals(0, spacecraft.getZ());
+        assertEquals("N", spacecraft.getDirection());
+    }
 }
